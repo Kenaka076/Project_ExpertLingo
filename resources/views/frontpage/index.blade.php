@@ -1,40 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <!-- Webpage Title -->
-        <title>Expertlingo</title>
-        <script src="https://cdn.tailwindcss.com"></script>
-    </head>
-    <body data-spy="scroll" data-target=".fixed-top">
+@extends('layouts.mainlayout')
 
-        <header class="navbar fixed-top bg-blue-950 shadow-lg">
-                <div class="container sm:px-4 lg:px-8 flex flex-wrap items-center justify-between lg:flex-nowrap">
+@section('title', 'Expertlingo')
 
-                    <!-- Image Logo -->
-                    <a class="inline-block mr-4 py-2 text-xl whitespace-nowrap hover:no-underline focus:no-underline" href="index.html">
-                        <img src="images/Logo Expertlingo.png" alt="alternative" class="h-14" />
-                    </a>
-
-                    <button class="background-transparent rounded text-xl leading-none hover:no-underline focus:no-underline lg:hidden lg:text-gray-400" type="button" data-toggle="offcanvas">
-                        <span class="navbar-toggler-icon inline-block w-8 h-8 align-middle"></span>
-                    </button>
-
-                    <div class="navbar-collapse offcanvas-collapse lg:flex lg:flex-grow lg:items-center" id="navbarsExampleDefault">
-                    </div>
-                    <nav :class="{'flex': open, 'hidden': !open}"
-                    class="flex-col flex-grow pb-4 md:pb-0 hidden md:flex md:justify-end md:flex-row">
-                    <a class="px-4 py-2 mt-2 text-2xl font-semibold text-white bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 duration-200 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                        href="3">Home</a>
-                    <a class="px-4 py-2 mt-2 text-2xl font-semibold text-white bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 duration-200 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                        href="#payment">Payment</a> 
-                    <a class="px-4 py-2 mt-2 text-2xl font-semibold text-white bg-transparent rounded-lg md:mt-0 md:ml-4 hover:text-gray-900 focus:text-gray-900 duration-200 hover:bg-gray-100 focus:bg-gray-200 focus:outline-none focus:shadow-outline"
-                        href="#chat">Chat</a> 
-                    </nav>
-                </div>
-        </header>
-        <!-- end of navigation -->
+@section('content')
 
         <section class="text-white bg-slate-900" id="about">
             <div class="container flex flex-col items-center px-6 py-20 mx-auto md:flex-row lg:px-32">
@@ -139,130 +107,6 @@
             </div> <!-- end of grid -->
         </div>
         </section> <!-- end of container -->
-    </div>
-
-    <!-- Details 1 -->
-
-
-<section id="details" class="pt-12 pb-16 lg:pt-16 bg-slate-800">
-    <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12">
-        <div class="lg:col-span-5">
-            <div class="mb-16 lg:mb-0 xl:mt-16">
-                <h2 class="mb-6 text-4xl font-bold">Results driven ground breaking technology</h2>
-                <p class="mb-4">Based on our team's extensive experience in developing line of business applications and constructive customer feedback we reached a new level of revenue.</p>
-                <p class="mb-4">We enjoy helping small and medium-sized tech businesses take a shot at established Fortune 500 companies</p>
-            </div>
-        </div> <!-- end of col -->
-        <div class="lg:col-span-7">
-            <div class="xl:ml-14">
-                <img class="inline" src="images/details-1.jpg" alt="alternative" />
-            </div>
-        </div> <!-- end of col -->
-    </div> <!-- end of container -->
-</div>
-<!-- end of details 1 -->
-
-<!-- Details 2 -->
-<div class="py-24">
-    <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12">
-        <div class="lg:col-span-7">
-            <div class="mb-12 lg:mb-0 xl:mr-14">
-                <img class="inline" src="images/details-2.jpg" alt="alternative" />
-            </div>
-        </div> <!-- end of col -->
-        <div class="lg:col-span-5">
-            <div class="xl:mt-12">
-                <h2 class="mb-6 text-4xl font-bold">Instant results for the marketing department</h2>
-                <ul class="list-disc pl-5 mb-7 space-y-2">
-                    <li>Features that will help you and your marketers</li>
-                    <li>Smooth learning curve due to the knowledge base</li>
-                    <li>Ready out-of-the-box with minor setup settings</li>
-                </ul>
-                <a class="btn-solid-reg popup-with-move-anim mr-1.5" href="#details-lightbox">Lightbox</a>
-                <a class="btn-outline-reg" href="article.html">Details</a>
-            </div>
-        </div> <!-- end of col -->
-    </div> <!-- end of container -->
-</div>
-<!-- end of details 2 -->
-
-<!-- Details Lightbox -->
-<!-- Lightbox -->
-<div id="details-lightbox" class="lightbox-basic zoom-anim-dialog hidden">
-    <div class="lg:grid lg:grid-cols-12 lg:gap-x-8">
-        <button title="Close (Esc)" type="button" class="mfp-close x-button">×</button>
-        <div class="lg:col-span-8">
-            <div class="mb-12 text-center lg:mb-0 lg:text-left xl:mr-6">
-                <img class="inline rounded-lg" src="images/details-lightbox.jpg" alt="alternative" />
-            </div>
-        </div> <!-- end of col -->
-        <div class="lg:col-span-4">
-            <h3 class="mb-2 text-2xl font-bold">Goals Setting</h3>
-            <hr class="w-11 h-0.5 mt-0.5 mb-4 ml-0 border-none bg-indigo-600" />
-            <p>The app can easily help you track your personal development evolution if you take the time to set it up.</p>
-            <h4 class="mt-7 mb-2.5 text-2xl font-bold">User Feedback</h4>
-            <p class="mb-4">This is a great app that can help you save time and make your life easier. And it will help improve your productivity.</p>
-            <ul class="list mb-6 space-y-2">
-                <li class="flex">
-                    <i class="fas fa-chevron-right"></i>
-                    <div>Splash screen panel</div>
-                </li>
-                <li class="flex">
-                    <i class="fas fa-chevron-right"></i>
-                    <div>Statistics graph report</div>
-                </li>
-                <li class="flex">
-                    <i class="fas fa-chevron-right"></i>
-                    <div>Events calendar layout</div>
-                </li>
-                <li class="flex">
-                    <i class="fas fa-chevron-right"></i>
-                    <div>Location details screen</div>
-                </li>
-                <li class="flex">
-                    <i class="fas fa-chevron-right"></i>
-                    <div>Onboarding steps interface</div>
-                </li>
-            </ul>
-            <a class="btn-solid-reg mfp-close page-scroll" href="#download">Download</a>
-            <button class="btn-outline-reg mfp-close as-button" type="button">Back</button>
-        </div> <!-- end of col -->
-    </div> <!-- end of row -->
-</div> <!-- end of lightbox-basic -->
-<!-- end of lightbox -->
-<!-- end of details lightbox -->
-
-<!-- Details 3 -->
-<div class="pt-16 pb-12">
-    <div class="container px-4 sm:px-8 lg:grid lg:grid-cols-12 lg:gap-x-12">
-        <div class="lg:col-span-5">
-            <div class="mb-16 lg:mb-0 xl:mt-16">
-                <h2 class="mb-6 text-4xl font-bold">Platform integration and life-time free updates</h2>
-                <p class="mb-4">Get a glimpse of what this app can do for your marketing automation and understand why current users are so excited when using Pavo together with their teams.</p>
-                <p class="mb-4">We will promptly answer any questions and honor your requests based on the service level agreement</p>
-            </div>
-        </div> <!-- end of col -->
-        <div class="lg:col-span-7">
-            <div class="ml-14">
-                <img class="inline" src="images/details-3.jpg" alt="alternative" />
-            </div>
-        </div> <!-- end of col -->
-    </div> <!-- end of container -->
-</section>
-<!-- end of details 3 -->
-
-        <!-- Copyright -->
-        <footer class="bg-gray-800 text-white">
-            <div class="container mx-auto py-6 px-4">
-              <div class="flex flex-wrap justify-between items-center">
-                <div class="w-full md:w-auto text-center md:text-center mb-4 md:mb-0">
-                  <p> 2023 ExpertLingo. All rights reserved.</p>
-                </div>
-          </footer>
-
-        <!-- end of container -->
-        </div> <!-- end of copyright -->
-        <!-- end of copyright -->
 
 
         <!-- Scripts -->
@@ -271,5 +115,4 @@
         <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
         <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
         <script src="js/scripts.js"></script> <!-- Custom scripts -->
-    </body>
-</html>
+@endsection

@@ -25,5 +25,21 @@ class IndexController extends Controller
     {
         return view('frontpage.homepage');
     }
+
+    function pilih_guru()
+    {
+        return view('frontpage.pilih_guru');
+    }
+
+    function kursus()
+    {
+        return view('frontpage.kursus');
+    }
+
+    function payment()
+    {
+        return view('frontpage.payment');
+    }
+    
 }
 

@@ -8,21 +8,30 @@ use Illuminate\Support\Facades\Hash;
 
 class Student1Controller extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $students = Student::all();
-        return view('students.index', compact('students'));
+        $searchTerm = $request->input('search');
+        $students = Student::when($searchTerm, function ($query) use ($searchTerm) {
+            $query->where('firstName', 'like', '%' . $searchTerm . '%')
+                ->orWhere('lastName', 'like', '%' . $searchTerm . '%')
+                ->orWhere('email', 'like', '%' . $searchTerm . '%')
+                ->orWhere('phoneNumber', 'like', '%' . $searchTerm . '%');
+        })->paginate(10);
+    
+        return view('backpage.student', compact('students', 'searchTerm'));
     }
+    
+
 
     public function show($id)
     {
-        $student = Student::find($id);
+        $students = Student::find($id);
 
-        if (!$student) {
-            return view('students.show')->with('message', 'Student not found');
+        if (!$students) {
+            return view('student.show')->with('message', 'Student not found');
         }
 
-        return view('students.show', compact('student'));
+        return view('students.show', compact('students'));
     }
 
     public function create()

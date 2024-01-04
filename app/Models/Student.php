@@ -1,6 +1,6 @@
 <?php
 
-// app/Models/Student.php
+// app/Models/Student1.php
 
 namespace App\Models;
 
@@ -20,9 +20,14 @@ class Student extends Model
     protected $hidden = [
         'password',
     ];
+    
 
     public function setPasswordAttribute($value)
     {
         $this->attributes['password'] = Hash::make($value);
+    }
+    public function jadwals()
+    {
+        return $this->hasMany(Jadwal::class, 'id_student');
     }
 }
